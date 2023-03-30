@@ -1,6 +1,8 @@
 import Navbar from '@/components/Navbar'
 import Head from 'next/head'
 import Image from 'next/image'
+import Main from '@/components/Main'
+import About from '@/components/About'
 
 
 export default function Home() {
@@ -12,6 +14,8 @@ export default function Home() {
         <meta name="description" content="Ariel Navarro | Front-end Developer" />
       </Head>
       <Navbar />
+      <Main />
+      <About />
     </>
   )
 }
