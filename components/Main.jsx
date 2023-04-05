@@ -23,6 +23,7 @@ const Main = () => {
                     front-end web applications while learning more about the back-end.
                 </p>
                 <div className='flex items-center justify-between max-w-[330px] py-4'>
+                    
                     <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300'>
                         <FaLinkedinIn />
                     </div>

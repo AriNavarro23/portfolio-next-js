@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { AiOutlineMenu, AiOutlineClose, AiOutlineMail } from "react-icons/ai";
@@ -8,14 +8,25 @@ import { BsFillPersonLinesFill } from "react-icons/bs";
 
 const Navbar = () => {
     const [ nav, setNav ] = useState(false);
+    const [ shadow, setShadow ] = useState(false);
 
     const handleNav = () => {
         setNav(!nav);
     };
 
+    useEffect(() => {
+        const handleShadow = () => {
+            if(window.scrollY >= 400) {
+                setShadow(true);
+            } else {
+                setShadow(false);
+            }
+        };
+        window.addEventListener("scroll", handleShadow);
+    },[]);
 
     return (
-        <div className="fixed w-full h-20 shadow-xl z-[100]">
+        <div className={shadow ? "fixed w-full h-20 shadow-xl z-[100] bg-[#5651e5] bg-opacity-40 transition-all duration-500" : "fixed w-full h-20 z-[100]"}>
             <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16 ">
                 <Image 
                     src="" 
