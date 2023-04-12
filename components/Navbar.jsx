@@ -4,6 +4,7 @@ import Link from "next/link";
 import { AiOutlineMenu, AiOutlineClose, AiOutlineMail } from "react-icons/ai";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { BsFillPersonLinesFill } from "react-icons/bs";
+import { useRouter } from "next/router";
 
 
 const Navbar = () => {
@@ -34,7 +35,7 @@ const Navbar = () => {
 
     useEffect(() => {
         const handleShadow = () => {
-            if (window.scrollY >= 400) {
+            if (window.scrollY >= 90) {
                 setShadow(true);
             } else {
                 setShadow(false);
@@ -62,7 +63,7 @@ const Navbar = () => {
                     />
                 </Link>
                 <div>
-                    <ul className="hidden md:flex">
+                    <ul style={{color:`${linkColor}`}} className="hidden md:flex">
                         <Link href="/">
                             <li className="ml-10 text-sm uppercase hover:border-b">Home</li>
                         </Link>
@@ -123,13 +124,13 @@ const Navbar = () => {
                             <Link href="/#about">
                                 <li onClick={() => setNav(false)} className="py-4 text-sm">About</li>
                             </Link>
-                            <Link href="/skills">
+                            <Link href="/#skills">
                                 <li onClick={() => setNav(false)} className="py-4 text-sm">Skills</li>
                             </Link>
-                            <Link href="/projects">
+                            <Link href="/#projects">
                                 <li onClick={() => setNav(false)} className="py-4 text-sm">Projects</li>
                             </Link>
-                            <Link href="/contact">
+                            <Link href="/#contact">
                                 <li onClick={() => setNav(false)} className="py-4 text-sm">Contact</li>
                             </Link>
                         </ul>
